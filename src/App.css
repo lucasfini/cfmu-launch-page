@@ -1,38 +1,194 @@
-.App {
-  text-align: center;
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #212121;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main Header Styles */
+.main-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  background-color: white;
+  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.logo {
+  height: 60px;
+}
+
+.cfmu-logo {
+  height: 60px;
+  width: auto;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Auth Status Styles */
+.auth-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: #212121;
+}
+
+.auth-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.auth-button.login {
+  background-color: #f0f0f0;
+  color: #212121;
+}
+
+.auth-button.login:hover {
+  background-color: #e0e0e0;
+}
+
+.auth-button.logout {
+  background-color: #ff394a;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.auth-button.logout:hover {
+  background-color: #e12e3d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0px;
+  background-color: white;
+}
+
+.links-section {
+  width: 100%;
+  max-width: 100%;
+  background-image: url('./assets/pattern.svg');
+  background-repeat: repeat;
+  background-size: 30px 26px;
+  padding: 40px;
+  margin-bottom: 60px;
+}
+
+.main-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.link-block {
+  display: block;
+  background-color: #212121;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+  width: 25%;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.link-block:last-child {
+  margin-bottom: 0;
+}
+
+.link-block:hover {
+  background-color: #ff394a;
+}
+
+/* History Section */
+.history-section {
+  max-width: 800px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.history-section h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: #212121;
+  font-weight: normal;
+}
+
+.history-section p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #212121;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .header-right {
+    width: 100%;
+    align-items: center;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .link-block {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-status {
+    flex-direction: column;
+    gap: 5px;
   }
 }
